@@ -10,54 +10,40 @@ Live visualization of all the pokemon (with option to show gyms and pokestops) i
 
 Building off [Mila432](https://github.com/Mila432/Pokemon_Go_API)'s PokemonGo API, [tejado's additions](https://github.com/tejado/pokemongo-api-demo), [leegao's additions](https://github.com/leegao/pokemongo-api-demo/tree/simulation) and [Flask-GoogleMaps](https://github.com/rochacbruno/Flask-GoogleMaps).
 
----
-
-# Requirements
-* Python 2.7.x
-
 # Installation
 `pip install -r requirements.txt`
 
 # Usage
 `python example.py -a authService -u myUsername -p myPassword -l "Boulder, CO" -st 5`
 
-| Flag                            | Description                                               | Required | 
-|---------------------------------|-----------------------------------------------------------|----------| 
-| `-a`                            | Auth Service (ptc or google)                              |          | 
-| `-u`                            | Username                                                  | ✓        | 
-| `-p`                            | Password                                                  | ✓        | 
-| `-l`                            | Any location Google Maps can understand                   | ✓        | 
-| `-st`                           | Steps to take                                             | ✓        | 
-| `-ar` `--auto_refresh` `seconds`| Enables auto page reload. Value in seconds                |          | 
-| `-i` `--ignore`                 | Comma-separated list of Pokémon to ignore                 |          | 
-| `-o` `--only`                   | Comma-separated list of Pokemon to search for exclusively |          | 
-| `-dp` `--display-pokestop`      | Display pokestop                                          |          | 
-| `-dg` `--display-gym`           | Display gym                                               |          | 
-| `-H` `--host`                   | Set web server listening host                             |          | 
-| `-P` `--port`                   | Set web server listening port                             |          |
-|`-L` `--locale`                  | Locale for Pokemon names: en (default), fr, de            |          |
+| Flag | Description                             |
+|------|-----------------------------------------|
+| -a   | Auth Service (ptc or google)            |
+| -u   | Username                                |
+| -p   | Password                                |
+| -l   | Any location Google Maps can understand |
+| -st  | Steps to take                           |
+| -i, --ignore | Comma-separated list of Pokémon to ignore |
+| -o, --only   | Comma-separated list of Pokemon to search for exclusively |
+| -dp, --display-pokestop | Display pokestop                   |
+| -dg, --display-gym  | Display gym                   |
+| -H, --host  | Set web server listening host    |
+| -P, --port  | Set web server listening port    |
 
-_Note:
-5 steps is approximately a 1.2km radius. More than 10 is redundant (you usually can't walk that far before despawn anyway)_
+Note:
+5 steps is approximately a 1.2km radius. More than 10 is redundant (you usually can't walk that far before despawn anyway)
 
+# FAQ
 
-
-## Common Errors
-> _`Exception, e <- Invalid syntax.`_
-
+`Exception, e <-`
+`Invalid syntax.`
 * You are using python 3, download python 2.7 instead.
 
+`pip or python is not recognized as an internal or external command`
 
-> _`pip or python is not recognized as an internal or external command`_
+* replace pip with C:\Python27\Scripts\pip
+* replace python with C:\Python27\python
 
-* Replace pip with C:\Python27\Scripts\pip
-* Replace python with C:\Python27\python
+* Can I sign in with Google? Not yet, we're working on it, until then get a Trainer Club account
 
-## FAQ
-> _Can I sign in with Google?_
-
-* Yes you can! Pass the flag `-a google` to use Google authentication
-
-> _I'm on Windows, why does nothing work?_
-
-* See if anything in https://www.reddit.com/r/pokemongodev/comments/4t80df/wip_pokemon_go_map_visualization_google_maps_view/d5feu2f helps
+* I'm on Windows, why does nothing work? See if anything in https://www.reddit.com/r/pokemongodev/comments/4t80df/wip_pokemon_go_map_visualization_google_maps_view/d5feu2f helps
